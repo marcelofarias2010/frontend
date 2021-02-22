@@ -35,10 +35,24 @@ table{
     width: 50%;
 }
 th{
-    background-color: greenyellow;
-    color: red;
+    background-image: url("../img/bg.png");
+    color: white;
     height: 40px;
 }
 .aluno{
     width: 50%;
+}
+tr:hover{
+    background-color: #ddd;
+}
+tr:nth-child(even){
+    background-color: #666;
+}
+#video{
+    display: block;
+    margin: 0 auto;
+}
+#mapa{
+    display: block;
+    margin: 0 auto;
 }
