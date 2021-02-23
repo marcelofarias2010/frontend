@@ -147,7 +147,7 @@ and open the template in the editor.
                     <option value="guara">Guará</option>
                 </select><br>
                 <label>Mensagem:</label><br>
-                <textarea style="width:400px; height:200px;"></textarea><br>
+                <textarea></textarea><br>
                 <input type="submit" value="Cadastrar">
                 <input type="button" value="Limpar">
                 <button type="button">Cancelar</button>
