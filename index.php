@@ -7,13 +7,14 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1" />
         <title>Minha primeira página</title>
         <link rel="shortcut icon" href="icon/camera.png"> 
         <link href="css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <h1>Meu primeiro título</h1>
-        <div id="esquerda">
+        <div>
             <p id="primeiroparagrafo"><strong> <b>Lorem Ipsum</b> is simply dummy text of the 
                     <a href="https://www.google.com" target="blanck"> 
                         printing </a> and typesetting industry.</strong> 
@@ -27,19 +28,19 @@ and open the template in the editor.
                 like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
         </div>
-        <div id="centro">
+        <div>
             <p>
                 <img src="img/noteGamer.jpg" title="Notebook Acer Gamer" alt="notebook gamer">
             </p>
         </div>
-        <div id="direita">
+        <div>
             <p class="segundoparagrafo">
                 Why do we use it?
                 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
             </p>
         </div>
         <h1>Lista de Compras</h1>
-        <div>
+        <div class="lista">
             <ul>
                 <li class="uva">Uva</li>
                 <li>Banana</li>
@@ -102,56 +103,144 @@ and open the template in the editor.
         <h1>Mapas - geolocalização</h1>
         <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.1455185741065!2d-47.892343585145035!3d-15.796279189049995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3ae665464fb7%3A0x29d89d9adf83e13f!2sSenac%20Jess%C3%A9%20Freire%20(DF)!5e0!3m2!1spt-BR!2sbr!4v1613996258008!5m2!1spt-BR!2sbr" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         <h1>Áudio</h1>
-        <audio controls>
-            <source src="" type="audio/mp3">
-        </audio>
+        <div class="audio">
+            <audio controls>
+                <source src="" type="audio/mp3">
+            </audio>      
+        </div>
+
         <h1>Formulários</h1>
-        <form action="" method="post">
-            <fieldset>
-                <legend>Formulário de cadastro</legend>
-                <label>Nome:</label>
-                <input type="text" placeholder="digite seu nome"><br>
-                <label>Sobrenome:</label>
-                <input type="text" placeholder="digite seu sobrenome"><br>
-                <label>Idade:</label>
-                <input type="number"><br>
-                <label>Telefone</label>
-                <input type="tel"><br>
-                <label>Data de Nascimento</label>
-                <input type="date"><br>
-                <label>Genero:</label><br>
-                <input type="radio" name="genero" value="masculino">
-                <label>Masculino</label>
-                <input type="radio" name="genero" value="feminino">
-                <label>Feminino</label>
-                <input type="radio" name="genero" value="outros">
-                <label>Outros</label><br>
-                <label>Transportes:</label><br>
-                <input type="checkbox" value="bike">
-                <label>Bicicleta</label>
-                <input type="checkbox" value="moto">
-                <label>Moto</label>
-                <input type="checkbox" value="carro">
-                <label>Carro</label>
-                <input type="checkbox" value="publico">
-                <label>Público</label><br>
-                <label>Cidade Satélite</label><br>
-                <select size="5">
-                    <option>Selecione...</option>
-                    <option value="aguasclaras">Águas Claras</option>
-                    <option value="brazlandia">Brazlândia</option>
-                    <option value="ceilandia">CeiLândia</option>
-                    <option value="cruzeiro">Cruzeiro</option>
-                    <option value="estrutural">Estrutural</option>
-                    <option value="gama">Gama</option>
-                    <option value="guara">Guará</option>
-                </select><br>
-                <label>Mensagem:</label><br>
-                <textarea></textarea><br>
-                <input type="submit" value="Cadastrar">
-                <input type="button" value="Limpar">
-                <button type="button">Cancelar</button>
-            </fieldset>
-        </form>
+        <div class="container">
+            <form action="" method="post">
+                <fieldset>
+                    <legend>Formulário de cadastro</legend>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Nome:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" placeholder="digite seu nome">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Sobrenome:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="text" placeholder="digite seu sobrenome">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Idade:</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="number" min="0" max="110">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Telefone</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="tel" placeholder="(xx)9 ####-####">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Data de Nascimento</label>
+                        </div>
+                        <div class="col-75">
+                            <input type="date">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Genero:</label> 
+                        </div>
+                        <div class="col-75">
+                            <label class="containe">
+                                <input type="radio" name="genero" value="masculino">
+                                <span class="checkmark"></span>
+                                Masculino
+                            </label>
+
+                            <label class="containe">
+                                <input type="radio" name="genero" value="feminino">
+                                <span class="checkmark"></span>
+                                Feminino
+                            </label>
+
+                            <label class="containe">
+                                <input type="radio" name="genero" value="outros">
+                                <span class="checkmark"></span>
+                                Outros
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Transportes:</label>
+                        </div>
+                        <div class="col-75">                            
+                            <label class="containe trans">
+                                <input type="checkbox" value="bike">
+                                <span class="checkmark2"></span>
+                                Bicicleta
+                            </label>
+                            <label class="containe trans">
+                                <input type="checkbox" value="moto">
+                                <span class="checkmark2"></span>
+                                Moto
+                            </label>
+                            <label class="containe trans">
+                                <input type="checkbox" value="carro">
+                                <span class="checkmark2"></span>
+                                Carro
+                            </label>
+                            <label class="containe trans">
+                                <input type="checkbox" value="publico">
+                                <span class="checkmark2"></span>
+                                Público
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Cidade Satélite</label>
+                        </div>
+                        <div class="col-75">
+                            <select class="custom-select" style="width:200px;">
+                                <option>Selecione...</option>
+                                <option value="aguasclaras">Águas Claras</option>
+                                <option value="brazlandia">Brazlândia</option>
+                                <option value="ceilandia">CeiLândia</option>
+                                <option value="cruzeiro">Cruzeiro</option>
+                                <option value="estrutural">Estrutural</option>
+                                <option value="gama">Gama</option>
+                                <option value="guara">Guará</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-25">
+                            <label>Mensagem:</label>
+                        </div>
+                        <div class="col-75">
+                            <textarea></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-25"></div>
+                        <div class="col-75">
+                            <input class="add" type="submit" value="Cadastrar">
+                            <input class="clean" type="submit" value="Limpar">
+                            <input class="del" type="submit" value="Cancelar">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
     </body>
 </html>

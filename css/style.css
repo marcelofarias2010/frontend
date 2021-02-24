@@ -1,10 +1,14 @@
+* {
+    box-sizing: border-box;
+}
 body{
     background-color: #87CEEB;
 }
 h1{
     text-align: center;
-    color: rgba(0,0,255,0.2);
+    color: rgb(0,0,255);
 }
+
 img{
     display: block;
     margin-left: auto;
@@ -17,13 +21,31 @@ img{
 .segundoparagrafo{
     color: red;
 }
-ul{
-    list-style-image: url('../icon/camera.png');
-
+.lista{
+    margin: auto;
+    max-width: 450px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
+.lista ul{   
+    list-style-type: none;
+    list-style-image: url('../icon/camera.png');    
+}
+.lista ul li {
+    margin-top: 7px;
+    padding-bottom: 3px;
+    /*border-bottom: 1px solid #266fc5;*/
+}   
 li.uva{
     background: #ff9999;
     padding: 20px;
+}
+.audio{
+    margin-left: auto;
+    margin-right: auto;
+    width: 18em;
+
 }
 table, th, td{
     border-collapse: collapse;
@@ -57,54 +79,240 @@ tr:nth-child(even){
     margin: 0 auto;
 }
 
-input[type=text]{
+input[type=text], select, textarea, input[type=number], input[type=tel], input[type=date] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-}
-input[type=tel]{
-    width: 20%;
-    padding: 5px 20px;
-    margin: 5px 0;
-    box-sizing: border-box;
-}
-input[type=number]{
-    width: 20%;
-    padding: 5px 20px;
-    margin: 5px 0;
-    box-sizing: border-box;
-}
-input[type=date]{
-    width: 20%;
-    padding: 5px 20px;
-    margin: 5px 0;
-    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
 }
 textArea{
-    width: 100%;
-    height: 150px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
+    height: 200px;
 }
-select {
-  width: 100%;
-  padding: 16px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: #f1f1f1;
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+.add {
+    background-color: #4CAF50;
+    color: white;  
+    margin: 5px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+.del {
+    background-color: #ff9999;
+    color: white;
+    margin: 5px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+.clean {
+    background-color: #cad37f;
+    color: black;
+    margin: 5px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+.add:hover {
+    background-color: #45a049;
+    transition: all 0.3s linear;
+}
+.del:hover {
+    background-color: #99403d;
+    transition: all 0.7s linear;
+}
+.clean:hover {
+    background-color: #b7b920;
+    transition: all 0.7s linear;
+}
+.container{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+.col-25 {
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.trans{
+    padding: 0 12px 12px 0;
+}
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+.containe {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+/* Ocultar o botão de opção padrão do navegador*/
+.containe input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+/* crie um botão de opção personalizado*/
+.checkmark {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+.checkmark2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+}
+/* Ao passar o mouse, adicione uma cor de fundo cinza*/
+.containe:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.containe:hover input ~ .checkmark2 {
+    background-color: #ccc;
+}
+/* Quando o botão de opção está marcado, adiciona um fundo azul*/
+.containe input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+.containe input:checked ~ .checkmark2 {
+    background-color: #2196F3;
+}
+/* Cria o indicador (o ponto / círculo - oculto quando não marcado)*/
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkmark2:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+/*Mostra o indicador (ponto / círculo) quando marcado*/
+.containe input:checked ~ .checkmark:after {
+    display: block;
+}
+.containe input:checked ~ .checkmark2:after {
+    display: block;
+}
+/*Estilo do indicador (ponto/círculo)*/
+.containe .checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: white;
+}
+.containe .checkmark2:after {
+    top: 2px;
+    left: 5px;
+    width: 2px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
-input[type=button], input[type=submit], input[type=reset], button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
   cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }
